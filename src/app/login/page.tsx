@@ -11,6 +11,8 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
+  const dashboardRedirectUrl = process.env.NEXT_PUBLIC_CLERK_DASHBOARD_REDIRECT_URL || '/';
+
   const clearError = () => {
     setError('');
   };
@@ -36,7 +38,7 @@ const LoginPage = () => {
 
       if (result.status === 'complete') {
         await setActive({ session: result.createdSessionId });
-        router.push('/dashboard');
+        router.push(dashboardRedirectUrl); // Redirect to the dashboard
       } else {
         console.log(result);
       }
