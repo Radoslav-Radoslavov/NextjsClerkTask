@@ -13,8 +13,6 @@ const RegisterPage = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const dashboardRedirectUrl = process.env.NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL || '/';
-
   const clearError = () => {
     setError('');
   };
@@ -65,7 +63,7 @@ const RegisterPage = () => {
       }
       if (completeSignUp.status === 'complete') {
         await setActive({ session: completeSignUp.createdSessionId });
-        router.push(dashboardRedirectUrl); // Redirect to the dashboard
+        router.push('/dashboard');
       }
     } catch (err: any) {
       console.log(err);
