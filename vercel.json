@@ -1,5 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/sign-in", "destination": "/app/sign-in" },
+    { "source": "/sign-up", "destination": "/app/sign-up" }
   ]
 }
