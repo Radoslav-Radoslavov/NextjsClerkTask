@@ -1,6 +1,7 @@
+'use client';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useSignUp } from '@clerk/nextjs';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 const RegisterPage = () => {
@@ -121,7 +122,7 @@ const RegisterPage = () => {
             <h1 className="text-xs text-center">
               Already a user?{' '}
               <b>
-                <Link href="/login">Login!</Link>
+                <Link href="login">Login!</Link>
               </b>{' '}
             </h1>
             <button
