@@ -1,11 +1,10 @@
-'use client';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useSignIn } from '@clerk/nextjs';
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const LoginPage = () => {
-  const { isLoaded, signIn, setActive } = useSignIn();
+  const { isLoaded, signIn } = useSignIn();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -35,7 +34,7 @@ const LoginPage = () => {
       });
 
       if (result.status === 'complete') {
-        await setActive({ session: result.createdSessionId });
+        // Redirect to '/dashboard' after successful sign-in
         router.push('/dashboard');
       } else {
         console.log(result);
@@ -54,7 +53,7 @@ const LoginPage = () => {
       }}
     >
       <h1 className="text-2xl mb-4 text-center">
-        Already an user?<b> Sign in now! 👇</b>{' '}
+        Already a user?<b> Sign in now! 👇</b>{' '}
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
         <div>
@@ -92,7 +91,7 @@ const LoginPage = () => {
         </div>
         {error && <p className="text-red-500 text-center">{error}</p>}
         <h1 className="text-xs text-center">
-          Do not have an account?{' '}
+          Don't have an account?{' '}
           <b>
             <Link href="/register">Register now!</Link> 
           </b>{' '}
