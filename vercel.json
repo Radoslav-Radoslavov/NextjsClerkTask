@@ -1,8 +1,8 @@
 {
   "rewrites": [
-    { "source": "/sign-in", "destination": "/app/sign-in" },
-    { "source": "/sign-up", "destination": "/app/sign-up" },
+    { "source": "/sign-in", "destination": "/app/dashboard" },
+    { "source": "/sign-up", "destination": "/app/dashboard" },
     { "source": "/dashboard", "destination": "/app/dashboard" },
-    { "source": "/sign-in/factor-one", "destination": "/app/dashboard" }
+    { "source": "/sign-in/factor-one", "destination": "/app/sign-in/factor-one" }
   ]
 }
