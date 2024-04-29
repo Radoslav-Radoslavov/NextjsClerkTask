@@ -7,7 +7,7 @@ export default function Home() {
       <p className="mt-10 text-center">
         This is the example usage of Clerk authentication.
         <br />
-        To check Dashboard, log in using account i made - Name: vachev pass: vachev123 ,or create a new one.
+        Log in or sign up to check dashboard info.
       </p>
     </>
   );
