@@ -11,7 +11,7 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const dashboardRedirectUrl = process.env.NEXT_PUBLIC_CLERK_DASHBOARD_REDIRECT_URL || '/';
+  const dashboardRedirectUrl = process.env.NEXT_PUBLIC_CLERK_DASHBOARD_REDIRECT_URL || '/dashboard';
 
   const clearError = () => {
     setError('');
