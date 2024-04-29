@@ -1,7 +1,7 @@
 'use client';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useSignIn } from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router'; // Change from 'next/navigation'
 import Link from 'next/link';
 
 const LoginPage = () => {
@@ -94,7 +94,7 @@ const LoginPage = () => {
         <h1 className="text-xs text-center">
           Do not have an account?{' '}
           <b>
-            <Link href="register">Register now!</Link>
+            <Link href="/register">Register now!</Link> {/* Change from "register" to "/register" */}
           </b>{' '}
         </h1>
         <button
