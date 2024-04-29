@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex items-center">
         <Link href={`${userId ? '/dashboard' : '/'}`}>
           <div className="text-xl font-semibold text-white uppercase">
-            Clerk Authentication
+            Clerk Auth
           </div>
         </Link>
       </div>

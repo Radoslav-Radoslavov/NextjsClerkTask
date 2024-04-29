@@ -1,7 +1,7 @@
 'use client';
 import React, { FormEvent, useEffect, useState } from 'react';
 import { useSignUp } from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const RegisterPage = () => {
@@ -12,8 +12,6 @@ const RegisterPage = () => {
   const [code, setCode] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
-
-  const dashboardRedirectUrl = process.env.NEXT_PUBLIC_CLERK_DASHBOARD_REDIRECT_URL || '/';
 
   const clearError = () => {
     setError('');
@@ -65,7 +63,7 @@ const RegisterPage = () => {
       }
       if (completeSignUp.status === 'complete') {
         await setActive({ session: completeSignUp.createdSessionId });
-        router.push(dashboardRedirectUrl); // Redirect to the dashboard
+        router.push('/dashboard');
       }
     } catch (err: any) {
       console.log(err);
