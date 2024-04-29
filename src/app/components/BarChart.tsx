@@ -1,4 +1,5 @@
 'use client';
+// eslint-disable-next-line react/default-props-match-prop-types
 import React from 'react';
 import {
   BarChart as BarGraph,
